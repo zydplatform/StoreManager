@@ -211,6 +211,14 @@ div.cart-products{
     float:right;
 }
 
+.search-product input{
+    width: 100%;
+    margin: 5px 0px;
+    padding: 5px 0px 5px 5px;
+    border: 2px solid black;
+    color: rgba(51,100,255, 1);  
+}
+
 .cart-table button{
     text-align: center;
     font-weight: bolder;
