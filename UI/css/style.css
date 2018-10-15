@@ -105,6 +105,11 @@ form input, select{
     text-align: center;
 }
 
+#wrong-username, #wrong-password{
+    display: none;
+    color:maroon;
+}
+
 /* Nav Bar */
 
 ul {
