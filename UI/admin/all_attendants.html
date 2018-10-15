@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>All Registered Attendants</title>
+</head>
+
+<body>
+    <div id="main">
+        <header>
+            <div class="nav-bar">
+                <ul>
+                    <span class="title">Store Manager</span>
+                    <li><a href="../login.html">Logout</a></li>
+                    <li><a class="active" href="all_attendants.html">Attendants</a></li>
+                    <li><a href="all_products.html">Products</a></li>
+                    <li><a href="all_sales.html">Sales</a></li>
+                </ul>
+            </div>
+        </header>
+        <section class="main">
+            <div class="all-sales">
+                <div class="add_product_btn">
+                    <a href="register_attendant.html">Register New Attendant</a>
+                </div>
+                <div class="sales-table">
+                    <table>
+                        <caption>Registered Attendants</caption>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Attendant Name</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Kiganda Ivan</td>
+                            <td>Kiganda</td>
+                            <td>IvoKiganda@2018</td>
+                            <td>
+                                <span class="action">
+                                    <a class="sm-btn" href="attendant_profile.html">View</a>
+                                    <a class="sm-btn" href="edit_attendant.html">Edit</a>
+                                    <a class="sm-btn" href="">Delete</a>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 2018 - Store Manager App</p>
+        </footer>
+    </div>
+</body>
+
+</html>

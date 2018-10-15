@@ -1,0 +1,241 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.main {
+    min-height: 500px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.clearBoth { clear:both; }
+
+hr {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: rgba(51,100,255, 1);
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+hr:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: rgba(51,100,255, 1);
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table caption {
+    background: rgba(51,100,255, 1);
+    padding: 5px;
+    color: black;
+    font-weight: bolder;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+td span.action a{
+    text-decoration: none;
+    color: white;
+}
+
+td span.action a.sm-btn{
+    font-size: 15px;
+    background: rgba(51,100,255, 1);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+form#login {
+    width: auto;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
+form input, select{
+    width: 100%;
+    border: 2px solid rgba(51,100,255, 1);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+
+/* Login  */
+.login{
+    background-color: whitesmoke;
+    color: black;
+    padding: 20px;
+    margin: 15% auto;
+    width: 30%;
+    text-align: center;
+}
+
+.login form {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.login form > input{
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Nav Bar */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 100px 0 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+ul span.title {
+    float: left;
+    color: white;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 5px;   
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: rgba(51,100,255, 0.5);
+}
+
+.active, .add_product {
+    background-color: rgba(51,100,255, 1);
+}
+
+/* main section */
+
+section.main{
+    padding: 0;
+    margin: auto 100px;
+}
+
+.main .all-sales{
+    margin: 20px 0;
+}
+
+.add_product_btn{
+    margin-bottom: 20px
+}
+
+.add_product_btn a{
+    text-decoration: none;
+    background: rgba(51,100,255, 1);
+    border: 2px solid rgba(0,0,0, 0.5);
+    padding: 5px;
+    color: black;
+    font-weight: bolder;
+}
+
+.add_product{
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 15px;
+    padding: 1px !important;
+}
+
+.add-prd-btn {
+    width: 30%;
+    float: right;
+    color: black;
+    background: rgba(51,100,255, 1);
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+#product_details, #product_details th, #product_details td {
+    border: 1px solid  rgba(51,100,255, 1);
+    font-weight: bold;
+}
+
+#product_details th{
+    color:  rgba(51,100,255, 1);
+}
+
+h2.attendant-profile{
+    text-align: center;
+    
+}
+
+div.sell-products{
+    float:left;
+}
+
+div.cart-products{
+    float:right;
+}
+
+.search-product input{
+    width: 100%;
+    margin: 5px 0px;
+    padding: 5px 0px 5px 5px;
+    border: 2px solid black;
+    color: rgba(51,100,255, 1);  
+}
+
+.cart-table button{
+    text-align: center;
+    font-weight: bolder;
+    padding: 10px;
+    margin-top: 10px;
+    float: right;
+    color: black;
+    background: rgba(51,100,255, 1);
+    border: 2px solid black;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    background:  rgba(0, 0, 0, 0.85);
+    padding: 1px 0;
+}
