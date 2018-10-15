@@ -6,8 +6,15 @@ var wrongPassword = document.getElementById('wrong-password');
 login.addEventListener('submit', function(e){
     e.preventDefault();
 
-    console.log(e.target.username.value);
-    console.log(e.target.password.value);
+    if (e.target.username.value == 'admin' && e.target.password.value == 'admin'){
+        e.target.username.value = '';
+        e.target.username.value = '';
+        window.location.href = 'admin/all_sales.html'
+    } else if (e.target.username.value == 'attendant' && e.target.password.value == 'attendant'){
+        e.target.username.value = '';
+        e.target.username.value = '';
+        window.location.href = 'attendant/sell_product.html';
+    }
 
     if (e.target.username.value == ''){
         wrongUsername.style.display = 'block';
@@ -25,13 +32,5 @@ login.addEventListener('submit', function(e){
         wrongPassword.innerText = 'wrong password';
     }
 
-    if (e.target.username.value == 'admin' && e.target.password.value == 'admin'){
-        e.target.username.value = '';
-        e.target.username.value = '';
-        window.location.href = 'admin/all_sales.html'
-    } else if (e.target.username.value == 'attendant' && e.target.password.value == 'attendant'){
-        e.target.username.value = '';
-        e.target.username.value = '';
-        window.location.href = 'attendant/sell_product.html';
-    }
+   
 });
