@@ -1,6 +1,6 @@
 # Kiganda Ivan StoreManager Api
 This is a functional web application for managing a single store.
-
+[![Build Status](https://travis-ci.org/zydplatform/Store-Manager.svg?branch=master)](https://travis-ci.org/zydplatform/Store-Manager)
 
 API endpoints to manage store data
 
