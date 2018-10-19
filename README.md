@@ -27,12 +27,12 @@ Versioning
 This is version one"v1" of the API
 End Points(Required Features)
 End Point	Functionality
-GET api/v1/products/int:productId	Fetch a product
+GET api/v1/products/int:product_id	get a product
 POST api/v1/attendant/sales	Add a sale order
-GET api/v1/sales/int:saleId	Fetch a specific sale order
-GET api/v1/admin/sales	Admin fetch all sale orders
-POST api/v1/admin/products	Create a product
-GET api/v1/products	Fetch all products
+GET api/v1/sales/int:sale_id	get a specific sale order
+GET api/v1/owner/sales	Owner fetch all sale orders
+POST api/v1/owner/products	Create a product
+GET api/v1/products	get all products
 
 
 Tools
