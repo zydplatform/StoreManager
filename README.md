@@ -1,6 +1,18 @@
 # Kiganda Ivan StoreManager Api
 This is a functional web application for managing a single store.
-[![Build Status](https://travis-ci.org/zydplatform/Store-Manager.svg?branch=master)](https://travis-ci.org/zydplatform/Store-Manager)
+
+ 
+![Coveralls github](https://img.shields.io/coveralls/github/jekyll/jekyll.svg)
+
+[![Build Status](https://travis-ci.org/zydplatform/StoreManager.svg?branch=master)]
+(https://travis-ci.org/zydplatform/StoreManager)
+
+ 
+![Libraries.io for GitHub](https://img.shields.io/librariesio/github/phoenixframework/phoenix.svg)
+
+ 
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+
 
 API endpoints to manage store data
 
