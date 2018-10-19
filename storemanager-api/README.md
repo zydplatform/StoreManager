@@ -8,9 +8,7 @@ Travis ci Build Status
 ![Build Status](https://travis-ci.org/zydplatform/StoreManager.svg?branch=master)
 (https://travis-ci.org/zydplatform/StoreManager)
 
- Libraries
-![Libraries.io for GitHub](https://img.shields.io/librariesio/github/phoenixframework/phoenix.svg)
-
+ 
  
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
