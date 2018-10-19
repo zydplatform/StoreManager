@@ -1,26 +1,19 @@
 # Kiganda Ivan StoreManager Api
 This is a functional web application for managing a single store.
 
- 
+ Coverage Status
 ![Coveralls github](https://img.shields.io/coveralls/github/jekyll/jekyll.svg)
 
-[![Build Status](https://travis-ci.org/zydplatform/StoreManager.svg?branch=master)]
+Travis ci Build Status
+![Build Status](https://travis-ci.org/zydplatform/StoreManager.svg?branch=master)
 (https://travis-ci.org/zydplatform/StoreManager)
 
- 
+ Libraries
 ![Libraries.io for GitHub](https://img.shields.io/librariesio/github/phoenixframework/phoenix.svg)
 
  
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-
-API endpoints to manage store data
-
-Maintainability
-
-Build Status
-
-Coverage Status
 
 $pytest
 Versioning
@@ -57,7 +50,3 @@ Install all the necessary tools by
 
 $pip insatll -r requirements.txt
 Start app server in console/terminal/commandprompt
-
-$python app.py
-Test app in terminal
-
