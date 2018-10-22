@@ -1,11 +1,5 @@
 import json
 from flask import jsonify
-
-
-
-
-# from api.resources import app
-# from storeapi.models import Product, products
 import unittest
 
 class StoreApiTestCase(unittest.TestCase):
@@ -13,14 +7,13 @@ class StoreApiTestCase(unittest.TestCase):
         self.test_client = app.test_client()
         self.request_data={
             "product_id":1,
-            "product_ame":"Foam",
-            "product_rice":3000
+            "product_name":"shirt",
+            "product_price":15000,
+            "product_quantity" : 200,
+            "minimum_amount" : 50
         }
         self.sale_data={
-            "saleId":'1',
-            "productName":"Foam",
-            "created_by":"myself",
-            "details":"Mattress material"
+            
         }
 
     def test_addProduct(self):
@@ -29,8 +22,7 @@ class StoreApiTestCase(unittest.TestCase):
         )
         self.assertEqual(response.status_code,200)
         self.assertIn(
-            'Product added', str(response.data)
-        )
+            'Product added', str(response.data))
     def test_addByattendant(self):
         response = self.test_client.post(
         '/api/v1/products', data=json.dumps(self.request_data), content_type='application/json'

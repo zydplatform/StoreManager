@@ -46,7 +46,7 @@ $ virtualenv venv
 $ venv\Scripts\activate
 Install all the necessary tools by
 
-$pip insatll -r requirements.txt
+$pip install -r requirements.txt
 Start app server in console/terminal/commandprompt
 
 $python app.py

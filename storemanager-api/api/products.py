@@ -8,7 +8,7 @@ products = []
 specific_product = {}
 
 class Product:
-    def ___init__(self, product_id,product_name,product_price):
+    def ___init__(self, product_id,product_name,product_price,product_quantity,minimum_amount,product_category):
         self.product_id=product_id
         self.product_name=product_name
         self.product_price=product_price

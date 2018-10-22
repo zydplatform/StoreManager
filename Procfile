@@ -1,1 +1,1 @@
-web:gunicorn --chdir storemanager-api app:app
+web:gunicorn  app:app
