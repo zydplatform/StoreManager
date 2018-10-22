@@ -37,6 +37,8 @@ Pylint - a Python linting library
 Postman -Application to test and consume endpoints
 PEP8 - Style guide
 Getting Started clone the github repo to your computer:
+https://github.com/zydplatform/StoreManager/tree/develop
+
 
 Extract the zip file to another file
 Create virtual environment and activate it
@@ -54,7 +56,5 @@ Test app in terminal
 
 $pytest
 Versioning
-This is version one"v1" of the API
-Api End Points(Required Features)
-Api End Point	Functionality
+This is first version "v1" of the Store Manager API
 
