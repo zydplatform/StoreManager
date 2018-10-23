@@ -95,3 +95,5 @@ Acknowledgments
 Thanks to my LFA John Seremba and my teammates 'TEAM DIEHARDS'
 for all guidance given unto me to finish this application.
 Thanks be to God this will solve a problem
+
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/zydplatform/StoreManager/tree/develop.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fzydplatform%2FStoreManager%2Ftree%2Fdevelop)
