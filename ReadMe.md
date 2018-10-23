@@ -73,7 +73,7 @@ Pylint is a linting library that ensures best practices of coding are followed i
 This application is built following the PEP8 guide on writing 
 standard python
 
-**Versioning
+Versioning
 
 This is first version "v1" of the Store Manager API
 
