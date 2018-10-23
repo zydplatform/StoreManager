@@ -1,9 +1,9 @@
-#Store Manager Application
+**Store Manager Application**
 
 This application is used by store owners to manage sales in a single store and also 
 regulate the store attendants employed.
 
-Getting Started with Store Manager
+**Getting Started with Store Manager**
 
  coveralls
 ![Coveralls github](https://img.shields.io/coveralls/github/jekyll/jekyll.svg)
@@ -13,7 +13,7 @@ and run this link below for purposes of testing and development.
 https://zydplatform.github.io/StoreManager/
 
 
-Prerequisites
+**Prerequisites**
 
 Install a browser of your choice as mentioned above.
 Install requirements.txt file to prepare environment for the app to be up and running.
@@ -21,7 +21,7 @@ For the development environment install python 3.7 .
 Install the Flask framework used to develop the aplication
 Install text editor where we write our project files. (VScode)
 
-Installing 
+**Installing **
 
 $pip install python 3
 $pip install flask
@@ -38,7 +38,7 @@ Install all the necessary tools using pip
 
 
 
-Running tests
+**Running tests**
 
 $pip install pytest
 $pytest tests.py
@@ -51,7 +51,7 @@ API  tested api endpoints
 Postman -Application to test and consume endpoints
 
 
-Coverage Status
+**Coverage Status**
 
 ![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/filp/whoops.svg)
 
@@ -63,7 +63,7 @@ POST api/v1/owner/products	Create a product
 GET api/v1/products	get all products
 
 
-Coding style tests
+**Coding style tests**
 
 Pytest - a Python Testing Framework
 Pylint - a Python linting library
@@ -73,15 +73,15 @@ Pylint is a linting library that ensures best practices of coding are followed i
 This application is built following the PEP8 guide on writing 
 standard python
 
-Versioning
-This is first version "v1" of the Store Manager API
+**Versioning
+This is first version "v1" of the Store Manager API**
 
-Clone the github repo to your computer:
+*Clone the github repo to your computer:
 https://github.com/zydplatform/StoreManager/tree/develop
 
-Authors 
+**Authors **
 
-KIGANDA IVAN
+**KIGANDA IVAN
 
 License
  License
@@ -89,7 +89,7 @@ License
 
 This product is licensed under the MIT license
 
-Acknowledgments
+**Acknowledgments
 
 Thanks to my LFA John Seremba and my teammates 'TEAM DIEHARDS'
 for all guidance given unto me to finish this application.
