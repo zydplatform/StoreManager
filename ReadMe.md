@@ -1,4 +1,4 @@
-Store Manager Application
+#Store Manager Application
 
 This application is used by store owners to manage sales in a single store and also 
 regulate the store attendants employed.
