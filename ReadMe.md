@@ -21,7 +21,7 @@ For the development environment install python 3.7 .
 Install the Flask framework used to develop the aplication
 Install text editor where we write our project files. (VScode)
 
-**Installing **
+**Installing 
 
 $pip install python 3
 $pip install flask
@@ -38,7 +38,7 @@ Install all the necessary tools using pip
 
 
 
-**Running tests**
+**Running tests
 
 $pip install pytest
 $pytest tests.py
@@ -51,7 +51,7 @@ API  tested api endpoints
 Postman -Application to test and consume endpoints
 
 
-**Coverage Status**
+**Coverage Status
 
 ![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/filp/whoops.svg)
 
@@ -63,7 +63,7 @@ POST api/v1/owner/products	Create a product
 GET api/v1/products	get all products
 
 
-**Coding style tests**
+**Coding style tests
 
 Pytest - a Python Testing Framework
 Pylint - a Python linting library
@@ -79,7 +79,7 @@ This is first version "v1" of the Store Manager API**
 *Clone the github repo to your computer:
 https://github.com/zydplatform/StoreManager/tree/develop
 
-**Authors **
+**Authors 
 
 **KIGANDA IVAN
 
