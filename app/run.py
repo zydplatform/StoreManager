@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 app.config['DEBUG'] =True
 
-@app.route('/')
+@app.route('/',methods=['GET'])
 def index():
     return jsonify({'App':'store manager'})
 

@@ -1,20 +1,27 @@
 from flask import Flask,json,request, jsonify
 
-from run import app
 
 app.config['DEBUG'] =True
 
 # my data structures to store particular data as specified below
-users = []
+users = [{
+                "username":"admin",
+                "password":"admin"
+         },
+         {
+                 "username":"attendant",
+                 "password":"attendant"
+         }
+        ]
 class User:
     def __init__(self, name,password,id):
         self.name=name
         self.id = id
         self.password = password
 
-@app.route('/api/v1/users/<string:name>', methods=['GET'])
-def getUsers():
-  return jsonify({'users':users})
+    @app.route('/api/v1/users/<string:name>', methods=['GET'])
+    def getUsers(self):
+        return jsonify({'users':users})
 
 @app.route('/api/v1/user/<int:user_id>', methods=['GET'])
 def getUser(user_id):
