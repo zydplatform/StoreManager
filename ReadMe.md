@@ -45,6 +45,10 @@ $pytest tests.py
 
 
 Building Passing Tests
+Using Postman to test Store Manager APIs
+ https://documenter.getpostman.com/view/5619500/RWgxuEn2
+
+
  
 API  tested api endpoints
 
