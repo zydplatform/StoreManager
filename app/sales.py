@@ -1,69 +1,93 @@
-from flask import Flask,json,request, jsonify
+from flask import Flask
+
+from flask_restful import Api,Resource,reqparse
 
 from run import app
 
 app.config['DEBUG'] =True
 
-saleorder_records = []
-saleOrder = {}
+api = Api(app)
 
-class SaleRecord:
-    def __init__(self, sale_id,product_name,Attendant,product_quantity,product_category):
-        self.sale_id=sale_id
-        self.product_name=product_name
-        self.Attendant=Attendant
-        self.product_quantity = product_quantity
-        self.product_category = product_category
+sales =[{
+            "sale_made_by":"attendant1",
+            "sale_id":1,
+            "Total_worth_products_sold":120000,
+            "Products_sold_total":150
+        },
+        {
+            "sale_made_by":"attendant2",
+            "sale_id":2,
+            "Total_worth_products_sold":800000,
+            "Products_sold_total":550
+        },
+        {
+            "sale_made_by":"attendant3",
+            "sale_id":3,
+            "Total_worth_products_sold":1020000,
+            "Products_sold_total":1150
+        }
+       ]
 
-@app.route('/api/v1/attendant/sales',methods=['POST'])
-def CreateSaleorder():
-    sale_data=request.get_json()
-    sale_id=len(saleorder_records)+1
-    product_name=sale_data.get('product_name')
-    Attendant=sale_data.get('Attendant')
-    product_quantity =sale_data.get('product_quantity')
+class Sale(Resource):
+    #get specific sale
+    def get(self,sale_id):
+        for sale in sales:
+            if sale_id == sale['sale_id']:
+                return sale,200
 
-    newSales={'sale_id':sale_id, 'product_name':product_name, 'Attendant':Attendant,'product_quantity':product_quantity}
-    saleorder_records.append(newSales)
+        return 'Sale not found',404
 
-    return jsonify({"message":"You have successfully created a sale order"}),200
+    def post(self,sale_id):
+        parser = reqparse.RequestParser()
+        parser.add_argument('sale_made_by')
+        parser.add_argument('Total_worth_products_sold')
+        parser.add_argument('Products_sold_total')        
+        args = parser.parse_args()
 
-
-@app.route('/api/v1/sales/<int:sale_id>', methods=['GET'])
-def getSpecificsaleorder(sale_id):
-    if len(saleorder_records)<1:
-        return jsonify({
-            "status":"Fail",
-            "message":"NO sale orders at the moment"
-        }),404
-
+        for sale in sales :
+            if sale_id == sale['sale_id']:
+                return 'Sale with sale_id {} already exists'.format(sale_id),400
+        
+        sale = {"sale_id":sale_id,
+                "sale_made_by":args['sale_made_by'],
+                "Total_worth_products_sold":args['Total_worth_products_sold'],
+                "Products_sold_total":args['Products_sold_total']
+               }
+        sales.append(sale)
+        return sale,201
     
-    for saleOrder in saleorder_records:
-        if saleOrder['sale_id']==sale_id:
-            return jsonify({
-                "message":"You have fetched a sale order",
-                "Sale_order":saleOrder
-            }),200
-    
-    return jsonify({"Error":"Order not found , check to see that you wrote the right ID"})
+    def put(self,sale_id):
+        parser = reqparse.RequestParser()
+        parser.add_argument('sale_made_by')
+        parser.add_argument('Total_worth_products_sold')
+        parser.add_argument('Products_sold_total')
+        args = parser.parse_args()
 
+        for sale in sales :
+            if sale_id == sale['sale_id']:
+                sale['sale_made_by'] = args['sale_made_by']
+                sale['Total_worth_products_sold'] = args['Total_worth_products_sold']
+                sale['Products_sold_total'] = args['Products_sold_total']
+                return sale,200
 
-@app.route('/api/v1/owner/sales', methods=['GET'])
-def Allsaleorders():
-    if len(saleorder_records) <1:
-        return jsonify ({
-            "status":"Fail",
-            "message":"No sale orders at the moment"
-        }),404
+        sale = {"sale_id":sale_id,
+                "sale_made_by":args['sale_made_by'],
+                "Total_worth_products_sold":args['Total_worth_products_sold'],
+                "Products_sold_total":args['Products_sold_total']
+               }
+        sales.append(sale)
+        return sale,201
 
-    if len(saleorder_records) >1:
-        return jsonify({
-            "message":"Sale orders",
-            "Sales":saleorder_records
-        }),200
+    def delete(self,sale_id):
+        global sales
+        sales =[sale for sale in sales if sale['sale_id'] != sale_id]
+        return '{} is deleted '.format(sale_id),200
 
-    return jsonify({"Error":"Orders not found "})
+api.add_resource(Sale,"/api/v1/sale/<int:sale_id>")
 
-if __name__ == "__main__":
-    app.run(port=5000)
-    
+class Allsales(Resource):
+    def get(self):
+        return sales,200
+api.add_resource(Allsales,"/api/v1/sales")
+
+app.run(port=5000)
