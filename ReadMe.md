@@ -12,7 +12,7 @@ To quickly get started with store manager install a browser of your choice forex
 and run this link below for purposes of testing and development.
 https://zydplatform.github.io/StoreManager/
 
-**Login Credentials
+**Login Credentials**
 *username = admin
 *password = admin
 *username = attendant
