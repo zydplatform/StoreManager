@@ -1,80 +1,104 @@
-from flask import Flask,json,request, jsonify
+from flask import Flask
+
+from flask_restful import Api,Resource,reqparse
 
 from run import app
 
 app.config['DEBUG'] =True
 
-products = []
-specific_product = {}
+api = Api(app)
 
-class Product:
-    def ___init__(self, product_id,product_name,product_price,product_quantity,minimum_amount,product_category):
-        self.product_id=product_id
-        self.product_name=product_name
-        self.product_price=product_price
-        self.product_quantity=product_quantity
-        self.minimum_amount = minimum_amount
+products = [{
+                "product_name":"shirt",
+                "product_id":1,
+                "product_price":15000,
+                "product_quantity":100
+            },
+            {
+                "product_name":"shoes",
+                "product_id":2,
+                "product_price":6000,
+                "product_quantity":79
 
-@app.route("/api/v1/owner/products", methods =["POST"])
-def productAddition():
-    request_data=request.get_json()
-    product_id=len(products)+1
-    product_name= request_data.get('product_name')
-    product_price = request_data.get('product_price')
-    product_category = request_data.get('product_category')
-    product_quantity = request_data.get('product_quantity')
-    minimum_amount = request_data.get('minimum_amount')
+            },
+            {
+                "product_name":"coat",
+                "product_id":3,
+                "product_price":45000,
+                "product_quantity":10
 
-    if product_name == "": 
-        return jsonify({"message":"Please insert a product name.."})
-    
-    elif product_name != type(str):
-        return jsonify({"message":"Invalid product name.."})
+            }
+           ]
+'''
+ Creating our API endpoints by defining a Product resource class.
+let us use the four functions :get,post,put,delete
+'''
+
+
+class Product(Resource):
+    #retrieving product details:
+    def get(self,product_name):
+        for product in products:
+            if(product_name == product['product_name']):
+                return product,200
+           
+        return 'product not found ',404 #status code not found
+
+    #adding new product in store:
+    def post(self,product_name):
+        parser = reqparse.RequestParser()
+        parser.add_argument('product_id')
+        parser.add_argument('product_price')
+        parser.add_argument('product_quantity')
+        args = parser.parse_args()
+
+        for product in products:
+            if(product_name == product['name']):
+                return 'product with product_name {} already exists'.format(product_name),400 #status code bad request
+
+        product = {
+                'product_name': product_name,
+                'product_id': args['product_id'],
+                'product_price': args['product_price'],
+                'product_quantity': args['product_price']
+        }
+        products.append(product)
+        return product,201 #status code product created
+    '''
+    The post method is used to create a new product:
+    '''
+    def put(self,product_name):
+        parser = reqparse.RequestParser()
+        parser.add_argument('product_id')
+        parser.add_argument('product_price')
+        parser.add_argument('product_quantity')
+        args = parser.parse_args()
         
+        for product in products:
+            if(product_name == product['product_name']):
+                product['product_id'] = args['product_id']
+                product['product_price'] = args['product_price']
+                product['product_quantity'] = args['product_quantity']
+                return product,200
 
-    if product_price =="":
-        return jsonify({'message':"Please insert price of a particular product"})
+        product = {
+                    'product_name': product_name,
+                    'product_id': args['product_id'],
+                    'product_price': args['product_price'],
+                    'product_quantity': args['product_quantity']
+        }
+        products.append(product)
+        return product,201
 
-    elif product_price == type(str):
-        return jsonify({"message":"Invalid value inserted"})
+    def delete(self,product_name):
+        global products
+        products = [product for product in products if product['product_name'] != product_name]
+        return "{} is deleted .".format(product_name), 200
 
-    addproduct={"product_id":product_id,"product_name":product_name,
-    "product_price":product_price}
-    products.append(addproduct)
+api.add_resource(Product,"/api/v1/product/<string:product_name>")
 
-    return jsonify({"message":'Product {product_name} successfully added'}),200
-
-@app.route('/api/v1/products', methods=['GET'])
-def getProducts():
-
-    if len(products) >1:
-        return jsonify({
-            "message":"Available Products",
-            "Products":products
-        }),200
-    
-    return jsonify({"Error":"Products not found "})
-
-
-@app.route('/api/v1/products/<int:product_id>',methods=['GET'])
-def getSingleproduct(productId):
-    if len(products) <1:
-        return jsonify ({
-            "Status":"Fail", 
-            "message":"No products in inventory"
-            }),404
-
-
-    for specific_product in products:
-        if specific_product['productId']==productId:
-            return jsonify({
-                "message":"You have fetched product",
-                "Product":specific_product
-            }),200
-
-    return jsonify({
-        "Error":"Product not found , check to see that you wrote the right ID"
-        })
-
-if __name__ == "__main__":
-    app.run(port=5000)
+class Allproducts(Resource):
+    def get(self):
+        return products,200
+api.add_resource(Allproducts,"/api/v1/products")
+app.run(port=5001)
