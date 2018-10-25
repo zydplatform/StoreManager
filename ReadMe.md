@@ -46,10 +46,6 @@ Install all the necessary tools using pip
 
 Running all api tests 
 
-Travis tests
-
-[![Build Status](https://travis-ci.org/zydplatform/StoreManager.svg?branch=develop)](https://travis-ci.org/zydplatform/StoreManager)
-
 $pip install pytest
 $pytest tests.py
 
