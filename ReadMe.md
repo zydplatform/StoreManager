@@ -13,10 +13,10 @@ and run this link below for purposes of testing and development.
 https://zydplatform.github.io/StoreManager/
 
 **Login Credentials**
-*username = admin
-*password = admin
-*username = attendant
-*password = attendant
+*username = admin*
+*password = admin*
+*username = attendant*
+*password = attendant*
 
 
 **Prerequisites**
