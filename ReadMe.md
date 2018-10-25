@@ -44,7 +44,7 @@ Install all the necessary tools using pip
 
 
 
-Running tests
+Running all api tests 
 
 $pip install pytest
 $pytest tests.py
