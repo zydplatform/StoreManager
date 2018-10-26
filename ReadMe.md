@@ -50,8 +50,6 @@ $pip install pytest
 $pytest tests.py
 
 
-Building Passing Tests
-[![Coverage Status](https://coveralls.io/repos/github/zydplatform/StoreManager/badge.svg?branch=master)](https://coveralls.io/github/zydplatform/StoreManager?branch=master)
 Using Postman to test Store Manager APIs
  https://documenter.getpostman.com/view/5619500/RWgxuEn2
 
