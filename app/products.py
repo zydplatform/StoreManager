@@ -98,4 +98,10 @@ api.add_resource(Product,"/api/v1/product/<string:product_name>")
 class Allproducts(Resource):
     def get(self):
         return products,200
+
 api.add_resource(Allproducts,"/api/v1/products")
+class Index(Resource):
+  def index():
+    return products,200
+api.add_resource(Index,"/")
+
