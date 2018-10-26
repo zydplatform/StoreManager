@@ -2,9 +2,7 @@ from flask import Flask
 
 from flask_restful import Api,Resource,reqparse
 
-from run import app
-
-app.config['DEBUG'] =True
+from app import app
 
 api = Api(app)
 
@@ -101,4 +99,3 @@ class Allproducts(Resource):
     def get(self):
         return products,200
 api.add_resource(Allproducts,"/api/v1/products")
-app.run(port=5001)
